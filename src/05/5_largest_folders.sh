@@ -1,6 +1,6 @@
 #!/bin/bash
 
-largest_folders=$(du -h --max-depth=1 $path*/ | \
+largest_folders=$(du -h --max-depth=0 $1*/ | \
     sort -hr | \
     head -n 5 | \
     awk '{print NR " - " $2", " $1}')

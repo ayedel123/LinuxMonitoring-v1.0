@@ -11,7 +11,7 @@ time_start=$(date +%s)
 path=$1
 path_end=${path:${#A}-1:1}
 
-if ! [ -d $path ] || ! [ $path_end = '/' ]; then
+if ! [[ -d $path ]] || ! [ $path_end = '/' ]; then
 count_time $time_start
 exit 1;
 fi
@@ -24,7 +24,3 @@ fi
 ./10_largest_executable_files.sh $path
 
 count_time $time_start
-
-
-
-
