@@ -1,0 +1,7 @@
+{split($2, a, "."); \
+    if ($2 == a[length(a)]) \
+    {
+        a[length(a)]=""
+    }\
+        print NR " - " $2 ", " $1 ", " a[length(a)]
+    }
