@@ -7,3 +7,5 @@ largest_files=$(echo "$largest_files" |
 
 echo "TOP 10 files of maximum size arranged in descending order (path, size and type):"
 echo "$largest_files"
+
+echo "etc up to 10"

@@ -9,3 +9,4 @@ echo -e "TOP 5 folders of maximum size \
     arranged in descending order (path and size): \
     \n${largest_folders}"
 
+echo "etc up to 5"
