@@ -11,6 +11,9 @@ $4 < 0 || $4 > 6 ]]; then
 echo "Wrong colors!"; exit 1
 fi
 
-info=$(./get_info.sh $1 $2 $3 $4)
+
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+info=$(bash $SCRIPT_DIR/get_info.sh $1 $2 $3 $4)
 echo -e "$info"
 

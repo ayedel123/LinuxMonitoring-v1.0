@@ -1,6 +1,9 @@
 #!/bin/bash
 
-info=$(./get_info.sh)
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+info=$(bash $SCRIPT_DIR/get_info.sh)
 echo -e "$info"
 
-./write_info.sh "$info"
+bash $SCRIPT_DIR/write_info.sh "$info"
+
