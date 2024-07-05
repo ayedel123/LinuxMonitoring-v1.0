@@ -1,5 +1,8 @@
-{split($2, a, "."); \
-    if ($2 == a[length(a)]) \
+{
+file_path = $2;
+sub(".*/", "", file_path);
+split(file_path, a, "."); \
+    if (file_path == a[length(a)]) \
     {
         a[length(a)]=""
     }\

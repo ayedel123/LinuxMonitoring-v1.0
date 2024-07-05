@@ -2,10 +2,10 @@
 
 nlist='^[0-9]+$'
 
-column1_background=$(grep column1_background color.conf | sed 1q | cut -d= -f2 | tr -d '[:space:]')
-column1_font_color=$(grep column1_font_color color.conf | sed 1q | cut -d= -f2 | tr -d '[:space:]')
-column2_background=$(grep column2_background color.conf | sed 1q | cut -d= -f2 | tr -d '[:space:]')
-column2_font_color=$(grep column2_font_color color.conf | sed 1q | cut -d= -f2 | tr -d '[:space:]')
+column1_background=$(grep -s column1_background color.conf | sed 1q | cut -d= -f2 | tr -d '[:space:]')
+column1_font_color=$(grep -s column1_font_color color.conf | sed 1q | cut -d= -f2 | tr -d '[:space:]')
+column2_background=$(grep -s column2_background color.conf | sed 1q | cut -d= -f2 | tr -d '[:space:]')
+column2_font_color=$(grep -s column2_font_color color.conf | sed 1q | cut -d= -f2 | tr -d '[:space:]')
 
 res=$(./check_color.sh $column1_background\
     $column1_font_color\

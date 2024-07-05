@@ -8,7 +8,7 @@ if [ -z "$exe_files" ]; then
 exit 1
 fi
 
-md5="$(md5 -q $exe_files)"
+md5="$(md5sum $exe_files | awk '{print $1}')"
 size=$(du -h $exe_files | sort -rh | awk '{print NR" - "$2", "$1", "}')
 
 

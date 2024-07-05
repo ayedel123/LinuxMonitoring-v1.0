@@ -1,5 +1,10 @@
 #!/bin/bash
 
+
+if [[ $# != 0 ]]; then 
+	echo "There must be no parameters!"; exit 1
+fi 
+
 color=$(./read_color.sh)
 
 info=$(./get_info.sh $color)
