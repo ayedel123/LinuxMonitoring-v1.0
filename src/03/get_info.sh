@@ -1,5 +1,7 @@
 #!/bin/bash
 
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
 hostname=$(hostname)
 timezone=$(timedatectl | awk '/Time zone:/ {print $3 $4 $5}' | tr '(),' ' ')
 date=$(date | awk '{print $3, $2, $6, $4}')
@@ -16,8 +18,8 @@ space_root=$(df / |awk 'NR==2{ printf("%.2f", $2/1024) }')
 space_root_used=$(df / |awk 'NR==2{ printf("%.2f", $3/1024) }')
 space_root_free=$(df / |awk 'NR==2{ printf("%.2f", $4/1024) }')
 
-nc=$(./pick_color.sh $1 $2)
-vc=$(./pick_color.sh $3 $4)
+nc=$(bash $SCRIPT_DIR/pick_color.sh $1 $2)
+vc=$(bash $SCRIPT_DIR/pick_color.sh $3 $4)
 ec="\e[0m"
 
 info="${nc}HOSTNAME${ec} = ${vc}$hostname${ec}"
